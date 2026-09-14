@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Dataset
+dataset/
+
+# Uploaded files
+uploads/
+src/uploads/
+
+# Large trained model
+models/deepfake_model.h5
+
+# Temporary files
+temp.jpg
+# Personal and test images
+mee.jpeg
+yuva img.jpeg
+test.jfif
+test1.jpg
+

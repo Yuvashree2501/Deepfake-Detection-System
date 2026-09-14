@@ -1,0 +1,98 @@
+/* ===== GLOBAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+p {
+    color: #cbd5e1;
+}
+
+/* ===== MAIN CARD ===== */
+.container {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ===== FILE INPUT ===== */
+input[type="file"] {
+    margin: 10px 0;
+}
+
+/* ===== BUTTON ===== */
+button {
+    background: #38bdf8;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+/* ===== IMAGE PREVIEW FIX (IMPORTANT) ===== */
+.preview-img {
+    margin-top: 15px;
+    max-width: 100%;        /* prevents overflow */
+    max-height: 300px;      /* 🔥 LIMIT HEIGHT */
+    object-fit: contain;    /* keeps aspect ratio */
+    border-radius: 10px;
+    border: 2px solid #334155;
+}
+
+/* ===== RESULT CARD ===== */
+.result-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ===== RISK BAR ===== */
+.progress {
+    width: 100%;
+    background: #334155;
+    border-radius: 10px;
+    height: 12px;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: red;
+}
+
+/* ===== STATUS COLORS ===== */
+.green {
+    color: #22c55e;
+}
+
+.yellow {
+    color: #facc15;
+}
+
+.red {
+    color: #ef4444;
+}

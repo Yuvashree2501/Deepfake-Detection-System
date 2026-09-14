@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Analysis Report</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <h1>🔍 Analysis Report</h1>
+
+    <div class="result-box">
+
+        <!-- Image -->
+        <img src="/{{ image_path }}" class="preview-img">
+
+        <!-- AI -->
+        <p>
+            🤖 AI Generated:
+
+            <span class="
+                {% if result.ai_generated == 'Yes' %}
+                    red
+                {% elif result.ai_generated == 'Uncertain' %}
+                    yellow
+                {% else %}
+                    green
+                {% endif %}
+            ">
+                {{ result.ai_generated }}
+            </span>
+        </p>
+
+        <!-- Copy Move -->
+        <p>
+            🔁 Copy-Move:
+
+            <span class="
+                {% if result.copy_move == 'Detected' %}
+                    red
+                {% else %}
+                    yellow
+                {% endif %}
+            ">
+                {{ result.copy_move }}
+            </span>
+        </p>
+
+        <!-- Splicing -->
+        <p>
+            ✂️ Splicing:
+
+            <span class="
+                {% if result.splicing == 'Detected' %}
+                    red
+                {% else %}
+                    yellow
+                {% endif %}
+            ">
+                {{ result.splicing }}
+            </span>
+        </p>
+
+        <!-- Risk Score -->
+        <p>⚠️ Risk Score:</p>
+
+        <div class="progress">
+
+            <div class="progress-bar"
+
+                 style="width: {{ result.risk_score }}%;
+                 background-color:
+                 {% if result.risk_score < 40 %}
+                     green
+                 {% elif result.risk_score < 70 %}
+                     orange
+                 {% else %}
+                     red
+                 {% endif %};">
+
+            </div>
+
+        </div>
+
+        <!-- Percentage -->
+        <h2>{{ result.risk_score }}%</h2>
+
+        <!-- Final Result -->
+        <h2 class="
+            {% if result.final_result == 'Authentic' %}
+                green
+            {% elif result.final_result == 'Suspicious' %}
+                yellow
+            {% else %}
+                red
+            {% endif %}
+        ">
+            {{ result.final_result }}
+        </h2>
+
+        <!-- Back -->
+        <a href="/" style="text-decoration:none;">
+            <button>⬅ Back</button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>

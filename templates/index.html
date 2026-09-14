@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deepfake Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🧠 Deepfake Forensic Analyzer</h1>
+    <p class="tagline">Detect AI-generated and manipulated images instantly</p>
+
+    <div class="card">
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="file" id="fileInput" required>
+
+            <img id="preview" src="#" class="preview-img" style="display:none;"/>
+
+            <button type="submit">Analyze Image</button>
+
+        </form>
+
+    </div>
+
+    <div class="features">
+        <div>🤖 AI Detection</div>
+        <div>🔁 Copy-Move</div>
+        <div>✂️ Splicing</div>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("fileInput").onchange = function (event) {
+    const [file] = event.target.files;
+    if (file) {
+        let img = document.getElementById("preview");
+        img.src = URL.createObjectURL(file);
+        img.style.display = "block";
+    }
+};
+</script>
+
+</body>
+</html>
